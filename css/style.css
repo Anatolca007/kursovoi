@@ -1,0 +1,265 @@
+/* Подключение шрифта */
+@font-face {
+    font-family: "Roboto";
+    src: url("Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+*, *::after, *::before {
+    font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+body,
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #e6e6e5;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    transition: .2s;
+}
+
+form {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    gap: 15px;
+}
+form * {
+    font-size: 18px;
+}
+form input:not([type="submit"]) {
+    width: 100%;
+}
+
+button,
+input,
+label,
+form a,
+.product a {
+    color: #000;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 3px 5px rgba(0,0,0,.2);
+    border-radius: 5px;
+    transition: .2s;
+}
+
+button,
+input[type="submit"],
+form a,
+.product a {
+    cursor: pointer;
+}
+
+button:not(:disabled):hover,
+input[type="submit"]:not(:disabled):hover,
+form a:hover,
+.product a:hover {
+    color: #fff;
+    background: #333;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+header {
+    padding: 15px 25px;
+    background: #fff;
+    border-radius: 5px;
+}
+header a {
+    margin: 0 10px;
+    padding: 5px 15px;
+    border-radius: 25px;
+    background: #f5f5f5;
+    color: #333;
+}
+header a:hover {
+    color: #000;
+    background: #f1f1f1;
+}
+
+.price {
+    font-size: 24px;
+    background: #333;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.2);
+}
+
+.add-bonuses,
+.bonuses-info {
+    position: absolute;
+    top: 100%;
+    margin-top: 20px;
+    white-space: nowrap;
+    font-size: 14px;
+    background: #ff9d41;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.2);
+}
+
+.bonuses-info {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #fff;
+    margin-top: 60px;
+    color: #000;
+    text-align: center;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: max-content;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px 15px;
+}
+.product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 25px;
+    background: #fff;
+    height: 100%;
+}
+.product img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 25px;
+}
+.product .info {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.product .name {
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.product .price,
+.product .basket-count,
+.product .total-price {
+    display: inline-block;
+    font-size: 14px;
+    color: #555;
+    background: #f1f1f1;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: none;
+    width: fit-content;
+    margin: 5px 0;
+}
+.product .price,
+.product .total-price {
+    padding: 10px 25px;
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.product button,
+.product a {
+    margin-top: auto;
+    width: 100%;
+}
+.product .total-price {
+    width: 100%;
+    margin: 15px 0 0 0;
+    text-align: center;
+}
+
+.basket-list {
+    display: block;
+}
+.basket-list .bt-container {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    gap: 15px;
+}
+.product a {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.buy {
+    position: fixed;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #000;
+    background: #000;
+    bottom: 15px;
+    right: 15px;
+    white-space: nowrap;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    padding: 15px 25px;
+    cursor: pointer;
+}
+.buy:hover {
+    color: #fff;
+    background: #333;
+}
+.buy span {
+    margin-left: 10px;
+    color: #000;
+    background: #ff9d41;
+    padding: 8px 10px;
+    border-radius: 25px;
+}
+
+.admin-info {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.admin-panel > a {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    background: #fff;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.admin-panel > a:hover {
+    box-shadow: 0 3px 5px rgba(0,0,0,.2);
+}
